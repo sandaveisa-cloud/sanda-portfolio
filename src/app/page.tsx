@@ -474,7 +474,7 @@ developer.buildExperience();`;
               <Github size={24} />
             </a>
             {/* Facebook */}
-            <a href="https://www.facebook.com/Sandusja" title="Facebook" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1877f2] hover:text-white hover:scale-110 transition-all shadow-none hover:shadow-[0_0_20px_rgba(24,119,242,0.4)]">
+            <a href="https://www.facebook.com/profile.php?id=61587802724966" title="Facebook" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1877f2] hover:text-white hover:scale-110 transition-all shadow-none hover:shadow-[0_0_20px_rgba(24,119,242,0.4)]">
               <Facebook size={24} />
             </a>
           </div>
