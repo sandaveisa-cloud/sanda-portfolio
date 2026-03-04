@@ -467,7 +467,7 @@ developer.buildExperience();`;
             <a href="mailto:sanda.veisa@gmail.com" title="Email" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#00ffcc] hover:text-black hover:scale-110 transition-all shadow-[0_0_0_rgba(0,255,204,0)] hover:shadow-[0_0_20px_rgba(0,255,204,0.4)]">
               <Mail size={24} />
             </a>
-            <a href="https://linkedin.com/in/sanda-veisa" title="LinkedIn" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#3b82f6] hover:text-white hover:scale-110 transition-all shadow-none hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+            <a href="https://www.linkedin.com/in/sandaveisa/" title="LinkedIn" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#3b82f6] hover:text-white hover:scale-110 transition-all shadow-none hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
               <Linkedin size={24} />
             </a>
             <a href="https://github.com/sandaveisa" title="GitHub" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:scale-110 transition-all shadow-[0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]">
