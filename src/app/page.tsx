@@ -39,10 +39,10 @@ developer.buildExperience();`;
       i++;
       if (i > codeToType.length) {
         clearInterval(typingInterval);
-        setTimeout(() => setIsBuilding(true), 1200);
-        setTimeout(() => setShowPortfolio(true), 3000); // Transitions to full site after 3s
+        setTimeout(() => setIsBuilding(true), 500);
+        setTimeout(() => setShowPortfolio(true), 1200); // Transitions to full site much faster
       }
-    }, 45);
+    }, 20); // Faster typing speed
 
     return () => clearInterval(typingInterval);
   }, [showPortfolio]);
