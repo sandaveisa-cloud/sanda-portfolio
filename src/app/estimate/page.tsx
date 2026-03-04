@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Send, ArrowLeft } from 'lucide-react';
-import { dictionaries, Language } from '../dictionaries';
+import { dictionaries, Language } from '../../dictionaries';
 import Link from 'next/link';
 
 export default function EstimatePage() {
