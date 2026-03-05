@@ -52,7 +52,8 @@ export const dictionaries = {
             },
             details: "Project details & special requirements",
             submit: "Request Calculation",
-            successMessage: "Data received. I will process the parameters and contact you shortly."
+            successMessage: "Data received. I will process the parameters and contact you shortly.",
+            pricingNote: "100% transparent and accessible pricing. Principles first: The work is done before final payment is requested."
         },
         footer: {
             title1: "System ready.",
@@ -118,7 +119,8 @@ export const dictionaries = {
             },
             details: "Detalles del proyecto y requisitos especiales",
             submit: "Solicitar Cálculo",
-            successMessage: "Datos recibidos. Procesaré los parámetros y me comunicaré en breve."
+            successMessage: "Datos recibidos. Procesaré los parámetros y me comunicaré en breve.",
+            pricingNote: "Precios 100% transparentes y accesibles. Mis principios primero: El trabajo se completa antes de solicitar el pago final."
         },
         footer: {
             title1: "Sistema listo.",
@@ -184,7 +186,8 @@ export const dictionaries = {
             },
             details: "Детали проекта и особые требования",
             submit: "Запросить Расчет",
-            successMessage: "Данные получены. Я обработаю параметры и свяжусь с вами в ближайшее время."
+            successMessage: "Данные получены. Я обработаю параметры и свяжусь с вами в ближайшее время.",
+            pricingNote: "100% прозрачные и доступные цены. Мой главный принцип: Сначала работа, затем финальная оплата за результат."
         },
         footer: {
             title1: "Система готова.",

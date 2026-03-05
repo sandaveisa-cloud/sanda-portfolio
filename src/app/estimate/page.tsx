@@ -7,7 +7,36 @@ import Link from 'next/link';
 
 export default function EstimatePage() {
     const [lang, setLang] = useState<Language>('en');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
     const t = dictionaries[lang];
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/sanda.veisa@gmail.com", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setIsSuccess(true);
+                form.reset();
+                setTimeout(() => setIsSuccess(false), 8000); // Hide after 8 seconds
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <main className="min-h-screen bg-[#000000] text-white selection:bg-[#00ffcc] selection:text-black font-sans relative overflow-x-hidden pt-20 pb-12">
@@ -38,9 +67,12 @@ export default function EstimatePage() {
                             <Calculator size={14} /> {t.estimate.subtitle}
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">{t.estimate.title}</h1>
-                        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light leading-relaxed mb-6">
                             {t.estimate.description}
                         </p>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm md:text-base font-medium mx-auto max-w-2xl text-left">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span> {t.estimate.pricingNote}
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -51,8 +83,18 @@ export default function EstimatePage() {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ffcc]/5 rounded-full blur-[80px] pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#3b82f6]/5 rounded-full blur-[80px] pointer-events-none"></div>
 
-                        <form className="relative z-10 space-y-8" action="https://formsubmit.co/sanda.veisa@gmail.com" method="POST">
+                        <form className="relative z-10 space-y-8" onSubmit={handleSubmit}>
                             <input type="hidden" name="_subject" value="New Project Estimate - Sanda Portfolio!" />
+
+                            {/* Success Message Banner */}
+                            {isSuccess && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+                                    className="bg-[#00ffcc]/10 border border-[#00ffcc] text-[#00ffcc] p-4 rounded-lg flex items-center justify-center text-center font-medium shadow-[0_0_20px_rgba(0,255,204,0.2)] mb-6"
+                                >
+                                    {t.estimate.successMessage}
+                                </motion.div>
+                            )}
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-3">
@@ -91,8 +133,12 @@ export default function EstimatePage() {
                                 <textarea name="details" rows={5} required className="w-full bg-[#050505] border border-white/10 rounded-lg px-4 py-4 text-white hover:border-white/20 focus:outline-none focus:border-[#00ffcc] transition-colors resize-none"></textarea>
                             </div>
 
-                            <button type="submit" className="w-full text-lg bg-[#00ffcc] text-black font-semibold rounded-xl px-4 py-5 hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,204,0.4)] transition-all flex items-center justify-center gap-2 mt-4">
-                                {t.estimate.submit} <Send size={20} />
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className={`w-full text-lg ${isSubmitting ? 'bg-gray-700 text-gray-400 cursor-not-allowed' : 'bg-[#00ffcc] text-black hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,204,0.4)]'} font-semibold rounded-xl px-4 py-5 transition-all flex items-center justify-center gap-2 mt-4`}
+                            >
+                                {isSubmitting ? 'Processing...' : t.estimate.submit} {!isSubmitting && <Send size={20} />}
                             </button>
                         </form>
                     </motion.div>
