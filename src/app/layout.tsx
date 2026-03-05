@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Sanda Veisa | Web Development & Digital Solutions",
   description: "Professional portfolio of Sanda Veisa - building high-end web applications with Next.js, React, and WordPress. Based in Latvia/UK.",
   verification: {
-    google: "Qg9dSAfdXeSeNMUrbh1XkEP-hPFMusAfnTq",
+    google: "Qg9dSAfdXeSeNMUrCbh1XkEP-hPFMusAfnTqFiR1C7c",
   },
 };
 
