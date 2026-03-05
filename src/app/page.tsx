@@ -271,15 +271,22 @@ developer.buildExperience();`;
                   <span className="px-3 py-1 rounded bg-yellow-400/10 text-yellow-300 text-xs font-mono border border-yellow-400/20">PHP Engine</span>
                   <span className="px-3 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-mono border border-purple-500/20">WooCommerce</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-2 text-white">Gardais Kumoss</h3>
+                <h3 className="text-3xl font-bold mb-2 text-white flex items-center gap-3">
+                  Gardais Kumoss
+                  <a href="https://gardaiskumoss.co.uk" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#C59D5F] transition-colors" title="View Live">
+                    <Globe size={24} />
+                  </a>
+                </h3>
                 <div className="flex items-center gap-2 text-gray-400 font-mono text-sm mb-4 bg-black/30 w-fit px-3 py-1 rounded border border-white/5">
-                  <Globe size={14} className="text-[#C59D5F]" /> gardaiskumoss.co.uk <span className="ml-2 text-[10px] text-yellow-500 px-1.5 py-0.5 border border-yellow-500/30 rounded-full">{t.projects.pendingLaunch}</span>
+                  <Globe size={14} className="text-[#C59D5F]" /> gardaiskumoss.co.uk <span className="ml-2 text-[10px] text-emerald-500 px-1.5 py-0.5 border border-emerald-500/30 rounded-full">{t.projects.live}</span>
                 </div>
                 <p className="text-gray-400 mb-8 leading-relaxed text-lg font-light">
-                  A bespoke, premium confectionery platform. This involved stripping down standard bloated builders to create a pure, high-performance custom WordPress theme. Perfectly integrated bilingual setup (Polylang) and an automated logic system for eCommerce.
+                  A bespoke, premium confectionery platform. Successfully migrated to a high-performance live environment. Features a perfectly integrated bilingual setup (Polylang) and a 100% custom React-based Cake Constructor with WhatsApp automated checkout.
                 </p>
                 <div className="flex items-center text-[#C59D5F] text-sm font-semibold opacity-60 group-hover:opacity-100 transition-opacity transform translate-x-[-5px] group-hover:translate-x-0">
-                  Featuring a 100% custom Cake React/WhatsApp Constructor <ChevronRight size={16} className="ml-1" />
+                  <a href="https://gardaiskumoss.co.uk" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    Explore Modern Patisserie <ChevronRight size={16} className="ml-1" />
+                  </a>
                 </div>
               </div>
 

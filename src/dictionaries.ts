@@ -19,7 +19,7 @@ export const dictionaries = {
             subtitle: "PROD_DEPLOYMENTS_v2.1",
             builtFromZero: "Built from ZERO",
             exploreLive: "Explore Live Site",
-            pendingLaunch: "System Built • Pending Launch",
+            live: "Live Deployment",
             inDevelopment: "IN DEVELOPMENT"
         },
         about: {
@@ -86,7 +86,7 @@ export const dictionaries = {
             subtitle: "DESPLIEGUES_PROD_v2.1",
             builtFromZero: "Construido desde CERO",
             exploreLive: "Explorar Sitio en Vivo",
-            pendingLaunch: "Sistema Construido • Esperando Lanzamiento",
+            live: "Despliegue en Vivo",
             inDevelopment: "EN DESARROLLO"
         },
         about: {
@@ -153,7 +153,7 @@ export const dictionaries = {
             subtitle: "PROD_РАЗВЕРТЫВАНИЕ_v2.1",
             builtFromZero: "Создано с НУЛЯ",
             exploreLive: "Смотреть вживую",
-            pendingLaunch: "Система готова • Ожидает запуска",
+            live: "Запущено в работу",
             inDevelopment: "В РАЗРАБОТКЕ"
         },
         about: {
