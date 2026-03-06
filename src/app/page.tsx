@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, Linkedin, Calculator, Send, Facebook } from 'lucide-react';
+import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, Linkedin, Calculator, Send, Facebook, Search, Zap, Shield } from 'lucide-react';
 import { dictionaries, Language } from '../dictionaries';
 
 export default function Portfolio() {
@@ -51,9 +51,10 @@ export default function Portfolio() {
     learning: ["Spanish"]
   },
   projects: [
+    "Moonlit Keen Design", 
     "Gardais Kumoss", 
     "Balearic Yacht Charter", 
-    "Bulkotava (Lovable)"
+    "Bulkotava"
   ]
 };
 
@@ -214,7 +215,46 @@ developer.buildExperience();`;
           </div>
 
           <div className="grid grid-cols-1 gap-12">
-            {/* Project 1: Balearic Yacht Charter */}
+            {/* Project 1: Moonlit Keen Design */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="group relative rounded-2xl bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/10 overflow-hidden transition-all hover:border-[#ec4899]/40 flex flex-col md:flex-row shadow-2xl"
+            >
+              <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 relative">
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="px-3 py-1 rounded bg-[#ec4899]/10 text-[#ec4899] text-xs font-mono border border-[#ec4899]/30 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#ec4899] animate-pulse"></span> {t.projects.inDevelopment}
+                  </span>
+                  <span className="px-3 py-1 rounded bg-white/5 text-white text-xs font-mono border border-white/10">Next.js / Headless</span>
+                  <span className="px-3 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Brand Experience</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-4 text-white flex items-center gap-3">
+                  Moonlit Keen Design
+                </h3>
+                <div className="flex items-center gap-2 text-gray-400 font-mono text-sm mb-4 bg-black/30 w-fit px-3 py-1 rounded border border-white/5">
+                  <Globe size={14} className="text-[#ec4899]" /> mk-design-homedecor.company.site <span className="ml-2 text-[10px] text-gray-500 px-1.5 py-0.5 border border-gray-500/30 rounded-full">TRANSITIONING</span>
+                </div>
+                <p className="text-gray-400 mb-8 leading-relaxed text-lg font-light">
+                  A massive, highly ambitious eCommerce and luxury brand experience platform. We are currently architecting the transition from a basic template to a super-stylish, beautifully animated, premium web platform tailored for bespoke home decor.
+                </p>
+                <div className="flex items-center text-[#ec4899] text-sm font-semibold opacity-60 group-hover:opacity-100 transition-opacity transform translate-x-[-5px] group-hover:translate-x-0">
+                  <a href="https://mk-design-homedecor.company.site/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    View Live Staging <ChevronRight size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <div className="w-full md:w-[40%] bg-black/80 flex items-center justify-center p-8 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at center, #ec4899 0%, transparent 70%)' }}></div>
+                <div className="relative z-10 w-full h-full border border-[#ec4899]/20 bg-[#ec4899]/10 backdrop-blur-sm rounded-lg flex flex-col items-center justify-center p-6 text-center shadow-inner">
+                  <Code2 size={48} className="text-[#ec4899]/50 mb-4 animate-pulse" />
+                  <p className="text-[#ec4899]/70 font-mono text-xs uppercase tracking-widest">[ Blueprinting Layouts ]</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Balearic Yacht Charter */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -397,6 +437,65 @@ developer.buildExperience();`;
         </div>
       </section>
 
+      {/* Search/Audit Section */}
+      <section className="py-24 px-6 relative bg-gradient-to-b from-[#050505] to-[#0a0a0a] border-y border-white/5 overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#3b82f6]/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center z-10 relative">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="w-full lg:w-1/2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#3b82f6] text-xs font-mono mb-6">
+              <Search size={14} /> SYSTEM_AUDIT // DIAGNOSTICS
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
+              Full System Architecture <br />& SEO Audit
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+              Not sure why your current site is underperforming? I actively conduct deep-dive technical reviews covering codebase quality, loading bottlenecks, and structural SEO metrics. No generic automated tests—only pure, actionable architectural insight.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 bg-[#0e0e0e] p-4 rounded-xl border border-white/5">
+                <Zap className="text-yellow-400 shrink-0" size={20} />
+                <div>
+                  <h4 className="text-white font-medium mb-1">Performance</h4>
+                  <p className="text-gray-500 text-sm">Next.js/React optimization, rendering speed, and server response metrics.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 bg-[#0e0e0e] p-4 rounded-xl border border-white/5">
+                <Shield className="text-[#00ffcc] shrink-0" size={20} />
+                <div>
+                  <h4 className="text-white font-medium mb-1">Code & Security</h4>
+                  <p className="text-gray-500 text-sm">Vulnerability checks, CMS bloat, and database structural flaws.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8">
+              <a href="#estimate" className="text-[#3b82f6] hover:text-white flex items-center gap-2 font-mono text-sm uppercase tracking-widest transition-colors group">
+                Request Full Audit <ChevronRight className="group-hover:translate-x-1 transition-transform" size={16} />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="w-full lg:w-1/2">
+            <div className="bg-[#111111] border border-[#3b82f6]/20 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl shadow-[#3b82f6]/5">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#3b82f6] to-transparent opacity-50"></div>
+              <div className="space-y-4 font-mono text-sm leading-relaxed">
+                <div className="flex justify-between items-center text-gray-400 border-b border-white/5 pb-2">
+                  <span>System Rating (Performance)</span> <span className="text-[#00ffcc]">99 / 100</span>
+                </div>
+                <div className="flex justify-between items-center text-gray-400 border-b border-white/5 pb-2">
+                  <span>LCP (Largest Contentful Paint)</span> <span className="text-[#00ffcc]">0.8s avg.</span>
+                </div>
+                <div className="flex justify-between items-center text-gray-400 border-b border-white/5 pb-2">
+                  <span>SEO Meta Integrity Check</span> <span className="text-yellow-400">Warnings Detected</span>
+                </div>
+                <div className="flex justify-between items-center text-gray-400 pb-2">
+                  <span>Database Query Latency</span> <span className="text-[#00ffcc]">&lt;45ms</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Enterprise Readiness Banner */}
       <section className="py-20 px-6 relative bg-gradient-to-r from-[#00ffcc]/5 to-[#3b82f6]/5 border-y border-white/5 overflow-hidden">
         {/* Abstract futuristic wave/dots background */}
@@ -479,6 +578,7 @@ developer.buildExperience();`;
                     <option value="web">{t.estimate.typeOptions.web}</option>
                     <option value="app">{t.estimate.typeOptions.app}</option>
                     <option value="ecommerce">{t.estimate.typeOptions.ecommerce}</option>
+                    <option value="audit">{t.estimate.typeOptions.audit}</option>
                     <option value="other">{t.estimate.typeOptions.other}</option>
                   </select>
                 </div>
@@ -535,6 +635,6 @@ developer.buildExperience();`;
           </p>
         </div>
       </footer>
-    </main>
+    </main >
   );
 }

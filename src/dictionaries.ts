@@ -41,6 +41,7 @@ export const dictionaries = {
                 web: "Premium Website",
                 app: "Custom Web Application",
                 ecommerce: "E-Commerce System",
+                audit: "System Architecture & SEO Audit",
                 other: "Other Complex Architecture"
             },
             budget: "Estimated Budget",
@@ -108,6 +109,7 @@ export const dictionaries = {
                 web: "Sitio Web Premium",
                 app: "Aplicación Web Personalizada",
                 ecommerce: "Sistema de Comercio Electrónico",
+                audit: "Auditoría de Arquitectura y SEO",
                 other: "Otra Arquitectura Compleja"
             },
             budget: "Presupuesto Estimado",
@@ -175,6 +177,7 @@ export const dictionaries = {
                 web: "Премиум Веб-сайт",
                 app: "Кастомное Веб-приложение",
                 ecommerce: "E-Commerce Система",
+                audit: "Аудит Архитектуры и SEO",
                 other: "Сложная Архитектура"
             },
             budget: "Бюджет",
