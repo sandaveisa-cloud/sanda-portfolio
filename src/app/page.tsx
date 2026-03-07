@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, Linkedin, Calculator, Send, Facebook, Search, Zap, Shield } from 'lucide-react';
 import { dictionaries, Language } from '../dictionaries';
+import Link from 'next/link';
 
 export default function Portfolio() {
   const [typedCode, setTypedCode] = useState("");
@@ -51,6 +52,7 @@ export default function Portfolio() {
     learning: ["Spanish"]
   },
   projects: [
+    "Portmann un ko",
     "Moonlit Keen Design", 
     "Gardais Kumoss", 
     "Balearic Yacht Charter", 
@@ -215,6 +217,45 @@ developer.buildExperience();`;
           </div>
 
           <div className="grid grid-cols-1 gap-12">
+            {/* Project 0: Portmann un ko */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="group relative rounded-2xl bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/10 overflow-hidden transition-all hover:border-[#f59e0b]/40 flex flex-col md:flex-row shadow-2xl"
+            >
+              <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 relative">
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="px-3 py-1 rounded bg-[#f59e0b]/10 text-[#f59e0b] text-xs font-mono border border-[#f59e0b]/30 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse"></span> {t.projects.inDevelopment}
+                  </span>
+                  <span className="px-3 py-1 rounded bg-white/5 text-white text-xs font-mono border border-white/10">{t.projects.portmann?.badge1 || "Architecture Planning"}</span>
+                  <span className="px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">{t.projects.portmann?.badge2 || "Booking System"}</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-4 text-white flex items-center gap-3">
+                  Portmann un ko
+                </h3>
+                <div className="flex items-center gap-2 text-gray-400 font-mono text-sm mb-4 bg-black/30 w-fit px-3 py-1 rounded border border-white/5">
+                  <Globe size={14} className="text-[#f59e0b]" /> portmann.lv <span className="ml-2 text-[10px] text-gray-500 px-1.5 py-0.5 border border-gray-500/30 rounded-full">{t.projects.portmann?.status || "LEGACY TRANSITION"}</span>
+                </div>
+                <p className="text-gray-400 mb-8 leading-relaxed text-lg font-light">
+                  {t.projects.portmann?.description || "An ambitious logistics architectural redevelopment."}
+                </p>
+                <div className="flex items-center text-[#f59e0b] text-sm font-semibold opacity-60 group-hover:opacity-100 transition-opacity transform translate-x-[-5px] group-hover:translate-x-0">
+                  <a href="https://www.portmann.lv/main.html" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    {t.projects.portmann?.viewLegacy || "View Legacy System"} <ChevronRight size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <div className="w-full md:w-[40%] bg-black/80 flex items-center justify-center p-8 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at center, #f59e0b 0%, transparent 70%)' }}></div>
+                <div className="relative z-10 w-full h-full border border-[#f59e0b]/20 bg-[#f59e0b]/10 backdrop-blur-sm rounded-lg flex flex-col items-center justify-center p-6 text-center shadow-inner">
+                  <Server size={48} className="text-[#f59e0b]/50 mb-4 animate-pulse" />
+                  <p className="text-[#f59e0b]/70 font-mono text-xs uppercase tracking-widest">[ Logistics Engine ]</p>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Project 1: Moonlit Keen Design */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -550,6 +591,9 @@ developer.buildExperience();`;
             <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="New Project Estimate - Sanda Portfolio!" />
 
+              {/* Spam Protection Honeypot */}
+              <input type="text" name="_honey" style={{ display: "none" }} />
+
               {/* Success Message Banner */}
               {isSuccess && (
                 <motion.div
@@ -598,6 +642,13 @@ developer.buildExperience();`;
                 <textarea name="details" rows={4} required className="w-full bg-[#050505] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00ffcc] transition-colors resize-none"></textarea>
               </div>
 
+              <div className="flex items-start gap-3 mt-4">
+                <input type="checkbox" id="consent_main" name="consent" required className="mt-1 w-4 h-4 rounded border-gray-600 bg-[#050505] text-[#00ffcc] focus:ring-[#00ffcc] focus:ring-offset-gray-900 cursor-pointer" />
+                <label htmlFor="consent_main" className="text-sm text-gray-400 leading-relaxed cursor-pointer">
+                  {t.estimate.consentText} <Link href="/privacy-policy" className="text-[#00ffcc] hover:underline" target="_blank">{t.estimate.privacyLink}</Link>.
+                </label>
+              </div>
+
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -630,7 +681,10 @@ developer.buildExperience();`;
               <Facebook size={24} />
             </a>
           </div>
-          <p className="text-gray-600 font-mono text-xs uppercase tracking-widest">
+          <p className="text-gray-600 font-mono text-xs uppercase tracking-widest mt-6">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">{t.estimate.privacyLink}</Link> <span className="px-2">|</span> <Link href="/terms" className="hover:text-white transition-colors">{t.estimate.termsLink}</Link>
+          </p>
+          <p className="text-gray-600 font-mono text-xs uppercase tracking-widest mt-4">
             © {new Date().getFullYear()} Sanda Veisa <span className="text-[#00ffcc] px-2">|</span> {t.footer.copyright}
           </p>
         </div>

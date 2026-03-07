@@ -85,6 +85,8 @@ export default function EstimatePage() {
 
                         <form className="relative z-10 space-y-8" onSubmit={handleSubmit}>
                             <input type="hidden" name="_subject" value="New Project Estimate - Sanda Portfolio!" />
+                            {/* Spam Protection Honeypot */}
+                            <input type="text" name="_honey" style={{ display: "none" }} />
 
                             {/* Success Message Banner */}
                             {isSuccess && (
@@ -131,6 +133,13 @@ export default function EstimatePage() {
                             <div className="space-y-3">
                                 <label className="text-sm font-medium text-gray-400">{t.estimate.details}</label>
                                 <textarea name="details" rows={5} required className="w-full bg-[#050505] border border-white/10 rounded-lg px-4 py-4 text-white hover:border-white/20 focus:outline-none focus:border-[#00ffcc] transition-colors resize-none"></textarea>
+                            </div>
+
+                            <div className="flex items-start gap-3 mt-4">
+                                <input type="checkbox" id="consent_estimate" name="consent" required className="mt-1 w-4 h-4 rounded border-gray-600 bg-[#050505] text-[#00ffcc] focus:ring-[#00ffcc] focus:ring-offset-gray-900 cursor-pointer" />
+                                <label htmlFor="consent_estimate" className="text-sm text-gray-400 leading-relaxed cursor-pointer">
+                                    {t.estimate.consentText} <Link href="/privacy-policy" className="text-[#00ffcc] hover:underline" target="_blank">{t.estimate.privacyLink}</Link>.
+                                </label>
                             </div>
 
                             <button

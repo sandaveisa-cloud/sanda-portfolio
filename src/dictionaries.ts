@@ -20,7 +20,14 @@ export const dictionaries = {
             builtFromZero: "Built from ZERO",
             exploreLive: "Explore Live Site",
             live: "Live Deployment",
-            inDevelopment: "IN DEVELOPMENT"
+            inDevelopment: "IN DEVELOPMENT",
+            portmann: {
+                badge1: "Architecture Planning",
+                badge2: "Booking System",
+                status: "LEGACY TRANSITION",
+                description: "An ambitious logistics architectural redevelopment. Moving from a legacy system to a deeply integrated, high-performance logistics rental platform featuring continuous online reservations and a modernized user experience.",
+                viewLegacy: "View Legacy System"
+            }
         },
         about: {
             title1: "Global Capabilities",
@@ -54,7 +61,10 @@ export const dictionaries = {
             details: "Project details & special requirements",
             submit: "Request Calculation",
             successMessage: "Data received. I will process the parameters and contact you shortly.",
-            pricingNote: "100% transparent and accessible pricing. Principles first: The work is done before final payment is requested."
+            pricingNote: "100% transparent and accessible pricing. Principles first: The work is done before final payment is requested.",
+            consentText: "I agree to the processing of personal data for communication purposes in accordance with the",
+            privacyLink: "Privacy Policy",
+            termsLink: "Terms & Conditions"
         },
         footer: {
             title1: "System ready.",
@@ -88,7 +98,14 @@ export const dictionaries = {
             builtFromZero: "Construido desde CERO",
             exploreLive: "Explorar Sitio en Vivo",
             live: "Despliegue en Vivo",
-            inDevelopment: "EN DESARROLLO"
+            inDevelopment: "EN DESARROLLO",
+            portmann: {
+                badge1: "Planificación Arquitectónica",
+                badge2: "Sistema de Reservas",
+                status: "TRANSICIÓN",
+                description: "Un ambicioso rediseño arquitectónico de logística. Evolucionando de un sistema heredado a una plataforma de alquiler de logística de alto rendimiento y profundamente integrada, que cuenta con reservas en línea continuas y una experiencia de usuario modernizada.",
+                viewLegacy: "Ver Sistema Heredado"
+            }
         },
         about: {
             title1: "Capacidades Globales",
@@ -122,7 +139,10 @@ export const dictionaries = {
             details: "Detalles del proyecto y requisitos especiales",
             submit: "Solicitar Cálculo",
             successMessage: "Datos recibidos. Procesaré los parámetros y me comunicaré en breve.",
-            pricingNote: "Precios 100% transparentes y accesibles. Mis principios primero: El trabajo se completa antes de solicitar el pago final."
+            pricingNote: "Precios 100% transparentes y accesibles. Mis principios primero: El trabajo se completa antes de solicitar el pago final.",
+            consentText: "Acepto el procesamiento de datos personales con fines de comunicación de acuerdo con la",
+            privacyLink: "Política de Privacidad",
+            termsLink: "Términos y Condiciones"
         },
         footer: {
             title1: "Sistema listo.",
@@ -156,7 +176,14 @@ export const dictionaries = {
             builtFromZero: "Создано с НУЛЯ",
             exploreLive: "Смотреть вживую",
             live: "Запущено в работу",
-            inDevelopment: "В РАЗРАБОТКЕ"
+            inDevelopment: "В РАЗРАБОТКЕ",
+            portmann: {
+                badge1: "Архитектурное Планирование",
+                badge2: "Система Бронирования",
+                status: "ПЕРЕХОДНОЙ ПЕРИОД",
+                description: "Амбициозная архитектурная реконструкция логистики. Переход от унаследованной системы к глубоко интегрированной, высокопроизводительной платформе аренды логистики с непрерывным онлайн-бронированием и современным пользовательским опытом.",
+                viewLegacy: "Посмотреть старую систему"
+            }
         },
         about: {
             title1: "Глобальные Возможности",
@@ -190,7 +217,10 @@ export const dictionaries = {
             details: "Детали проекта и особые требования",
             submit: "Запросить Расчет",
             successMessage: "Данные получены. Я обработаю параметры и свяжусь с вами в ближайшее время.",
-            pricingNote: "100% прозрачные и доступные цены. Мой главный принцип: Сначала работа, затем финальная оплата за результат."
+            pricingNote: "100% прозрачные и доступные цены. Мой главный принцип: Сначала работа, затем финальная оплата за результат.",
+            consentText: "Я согласен на обработку персональных данных для целей связи в соответствии с",
+            privacyLink: "Политикой Конфиденциальности",
+            termsLink: "Пользовательским Соглашением"
         },
         footer: {
             title1: "Система готова.",
