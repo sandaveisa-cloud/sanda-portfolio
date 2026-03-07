@@ -261,36 +261,42 @@ developer.buildExperience();`;
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="group relative rounded-2xl bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/10 overflow-hidden transition-all hover:border-[#ec4899]/40 flex flex-col md:flex-row shadow-2xl"
+              className="group relative rounded-2xl bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/10 overflow-hidden transition-all hover:border-[#ec4899]/50 flex flex-col md:flex-row-reverse shadow-2xl"
             >
-              <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 relative">
+              <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-l border-white/5 relative">
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="px-3 py-1 rounded bg-[#ec4899]/10 text-[#ec4899] text-xs font-mono border border-[#ec4899]/30 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#ec4899] animate-pulse"></span> {t.projects.inDevelopment}
-                  </span>
+                  <span className="px-3 py-1 rounded bg-[#ec4899]/10 text-[#ec4899] text-xs font-mono border border-[#ec4899]/30">{t.projects.moonlit?.badge1 || "E-Commerce"}</span>
                   <span className="px-3 py-1 rounded bg-white/5 text-white text-xs font-mono border border-white/10">Next.js / Headless</span>
-                  <span className="px-3 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Brand Experience</span>
+                  <span className="px-3 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">{t.projects.moonlit?.badge2 || "Brand Experience"}</span>
                 </div>
                 <h3 className="text-3xl font-bold mb-4 text-white flex items-center gap-3">
                   Moonlit Keen Design
+                  <a href="https://www.moonlitkeen.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#ec4899] transition-colors" title="View Live">
+                    <Globe size={24} />
+                  </a>
                 </h3>
                 <div className="flex items-center gap-2 text-gray-400 font-mono text-sm mb-4 bg-black/30 w-fit px-3 py-1 rounded border border-white/5">
-                  <Globe size={14} className="text-[#ec4899]" /> mk-design-homedecor.company.site <span className="ml-2 text-[10px] text-gray-500 px-1.5 py-0.5 border border-gray-500/30 rounded-full">TRANSITIONING</span>
+                  <Globe size={14} className="text-[#ec4899]" /> moonlitkeen.com <span className="ml-2 text-[10px] text-emerald-500 px-1.5 py-0.5 border border-emerald-500/30 rounded-full">{t.projects.live}</span>
                 </div>
                 <p className="text-gray-400 mb-8 leading-relaxed text-lg font-light">
-                  A massive, highly ambitious eCommerce and luxury brand experience platform. We are currently architecting the transition from a basic template to a super-stylish, beautifully animated, premium web platform tailored for bespoke home decor.
+                  {t.projects.moonlit?.description || "A beautifully animated, premium eCommerce and luxury brand experience platform tailored for bespoke home decor. Architected from the ground up for stunning visual fidelity and seamless shopping."}
                 </p>
                 <div className="flex items-center text-[#ec4899] text-sm font-semibold opacity-60 group-hover:opacity-100 transition-opacity transform translate-x-[-5px] group-hover:translate-x-0">
-                  <a href="https://mk-design-homedecor.company.site/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                    View Live Staging <ChevronRight size={16} className="ml-1" />
+                  <a href="https://www.moonlitkeen.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    {t.projects.moonlit?.viewLive || "Explore Platform"} <ChevronRight size={16} className="ml-1" />
                   </a>
                 </div>
               </div>
-              <div className="w-full md:w-[40%] bg-black/80 flex items-center justify-center p-8 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at center, #ec4899 0%, transparent 70%)' }}></div>
-                <div className="relative z-10 w-full h-full border border-[#ec4899]/20 bg-[#ec4899]/10 backdrop-blur-sm rounded-lg flex flex-col items-center justify-center p-6 text-center shadow-inner">
+              <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-r border-white/5 overflow-hidden">
+                {/* Background Image that fades in on hover */}
+                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/moonlit.png')" }}></div>
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
+                <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #ec4899 0%, transparent 70%)' }}></div>
+
+                {/* Abstract overlay that fades out on hover */}
+                <div className="relative z-10 w-full h-full border border-[#ec4899]/20 bg-[#ec4899]/10 backdrop-blur-md rounded-lg flex flex-col items-center justify-center p-6 text-center shadow-inner group-hover:opacity-0 group-hover:-translate-x-4 transition-all duration-500 pointer-events-none">
                   <Code2 size={48} className="text-[#ec4899]/50 mb-4 animate-pulse" />
-                  <p className="text-[#ec4899]/70 font-mono text-xs uppercase tracking-widest">[ Blueprinting Layouts ]</p>
+                  <p className="text-[#ec4899]/70 font-mono text-xs uppercase tracking-widest">[ Premium Frontend ]</p>
                 </div>
               </div>
             </motion.div>

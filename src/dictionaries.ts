@@ -27,6 +27,13 @@ export const dictionaries = {
                 status: "LEGACY TRANSITION",
                 description: "An ambitious logistics architectural redevelopment. Moving from a legacy system to a deeply integrated, high-performance logistics rental platform featuring continuous online reservations and a modernized user experience.",
                 viewLegacy: "View Legacy System"
+            },
+            moonlit: {
+                badge1: "E-Commerce",
+                badge2: "Brand Experience",
+                status: "LIVE",
+                description: "A beautifully animated, premium eCommerce and luxury brand experience platform tailored for bespoke home decor. Architected from the ground up for stunning visual fidelity and seamless shopping.",
+                viewLive: "Explore Platform"
             }
         },
         about: {
@@ -105,6 +112,13 @@ export const dictionaries = {
                 status: "TRANSICIÓN",
                 description: "Un ambicioso rediseño arquitectónico de logística. Evolucionando de un sistema heredado a una plataforma de alquiler de logística de alto rendimiento y profundamente integrada, que cuenta con reservas en línea continuas y una experiencia de usuario modernizada.",
                 viewLegacy: "Ver Sistema Heredado"
+            },
+            moonlit: {
+                badge1: "Comercio Electrónico",
+                badge2: "Experiencia de Marca",
+                status: "EN VIVO",
+                description: "Una plataforma de comercio electrónico y experiencia de marca de lujo, bellamente animada y adaptada para decoración del hogar a medida. Diseñada desde cero para una fidelidad visual impresionante y compras fluidas.",
+                viewLive: "Explorar Plataforma"
             }
         },
         about: {
@@ -183,6 +197,13 @@ export const dictionaries = {
                 status: "ПЕРЕХОДНОЙ ПЕРИОД",
                 description: "Амбициозная архитектурная реконструкция логистики. Переход от унаследованной системы к глубоко интегрированной, высокопроизводительной платформе аренды логистики с непрерывным онлайн-бронированием и современным пользовательским опытом.",
                 viewLegacy: "Посмотреть старую систему"
+            },
+            moonlit: {
+                badge1: "Электронная Коммерция",
+                badge2: "Бренд-опыт",
+                status: "ОНЛАЙН",
+                description: "Премиальная платформа электронной коммерции с красивой анимацией, созданная для эксклюзивного домашнего декора. Разработана с нуля для достижения потрясающей визуальной точности и удобства покупок.",
+                viewLive: "Изучить платформу"
             }
         },
         about: {
