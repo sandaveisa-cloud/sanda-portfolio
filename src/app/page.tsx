@@ -325,10 +325,15 @@ developer.buildExperience();`;
                 </div>
               </div>
 
-              {/* Abstract Visuals for Project */}
+              {/* Abstract Visuals / Image for Project */}
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-l border-white/5 overflow-hidden">
-                <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at right center, #3b82f6 0%, transparent 70%)' }}></div>
-                <div className="relative z-10 space-y-4 font-mono text-xs text-blue-300">
+                {/* Background Image that fades in on hover */}
+                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/balearic.png')" }}></div>
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
+                <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #3b82f6 0%, transparent 70%)' }}></div>
+
+                {/* Abstract overlay that fades out on hover */}
+                <div className="relative z-10 space-y-4 font-mono text-xs text-blue-300 group-hover:opacity-0 group-hover:translate-x-4 transition-all duration-500 pointer-events-none">
                   <div className="p-3 bg-black/60 rounded border border-blue-900/50 backdrop-blur-md">
                     <span>{'>'} connection established...</span><br />
                     <span>{'>'} querying yacht directory...</span><br />
@@ -372,9 +377,13 @@ developer.buildExperience();`;
               </div>
 
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center border-r border-white/5 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10" style={{ background: 'radial-gradient(circle at left center, #C59D5F 0%, transparent 70%)' }}></div>
-                {/* Code Window visual */}
-                <div className="relative z-10 bg-[#0a0a0a] rounded-lg border border-[#333] p-4 shadow-xl">
+                {/* Background Image that fades in on hover */}
+                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/gardais.png')" }}></div>
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
+                <div className="absolute inset-0 opacity-10 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at left center, #C59D5F 0%, transparent 70%)' }}></div>
+
+                {/* Code Window visual that fades out on hover */}
+                <div className="relative z-10 bg-[#0a0a0a]/80 backdrop-blur-sm rounded-lg border border-[#333] p-4 shadow-xl group-hover:opacity-0 group-hover:-translate-x-4 transition-all duration-500 pointer-events-none">
                   <div className="flex gap-1.5 mb-4 border-b border-[#222] pb-3">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
