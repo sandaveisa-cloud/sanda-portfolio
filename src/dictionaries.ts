@@ -32,7 +32,7 @@ export const dictionaries = {
                 badge1: "E-Commerce",
                 badge2: "Brand Experience",
                 status: "LIVE",
-                description: "A beautifully animated, premium eCommerce and luxury brand experience platform tailored for bespoke home decor. Architected from the ground up for stunning visual fidelity and seamless shopping.",
+                description: "An elegant, high-end eCommerce platform crafted for bespoke home decor and interior design. Built with a focus on immersive aesthetics, smooth animations, and a seamless, luxurious shopping experience.",
                 viewLive: "Explore Platform"
             }
         },
@@ -117,7 +117,7 @@ export const dictionaries = {
                 badge1: "Comercio Electrónico",
                 badge2: "Experiencia de Marca",
                 status: "EN VIVO",
-                description: "Una plataforma de comercio electrónico y experiencia de marca de lujo, bellamente animada y adaptada para decoración del hogar a medida. Diseñada desde cero para una fidelidad visual impresionante y compras fluidas.",
+                description: "Una elegante plataforma de comercio electrónico de alta gama diseñada para decoración del hogar y diseño de interiores a medida. Construida con un enfoque en estética inmersiva, animaciones fluidas y una experiencia de compra lujosa y sin problemas.",
                 viewLive: "Explorar Plataforma"
             }
         },
@@ -202,7 +202,7 @@ export const dictionaries = {
                 badge1: "Электронная Коммерция",
                 badge2: "Бренд-опыт",
                 status: "ОНЛАЙН",
-                description: "Премиальная платформа электронной коммерции с красивой анимацией, созданная для эксклюзивного домашнего декора. Разработана с нуля для достижения потрясающей визуальной точности и удобства покупок.",
+                description: "Элегантная платформа электронной коммерции премиум-класса, созданная для эксклюзивного домашнего декора и дизайна интерьеров. Разработана с акцентом на захватывающую эстетику, плавные анимации и безупречный, роскошный процесс покупок.",
                 viewLive: "Изучить платформу"
             }
         },

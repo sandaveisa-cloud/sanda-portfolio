@@ -279,7 +279,7 @@ developer.buildExperience();`;
                   <Globe size={14} className="text-[#ec4899]" /> moonlitkeen.com <span className="ml-2 text-[10px] text-emerald-500 px-1.5 py-0.5 border border-emerald-500/30 rounded-full">{t.projects.live}</span>
                 </div>
                 <p className="text-gray-400 mb-8 leading-relaxed text-lg font-light">
-                  {t.projects.moonlit?.description || "A beautifully animated, premium eCommerce and luxury brand experience platform tailored for bespoke home decor. Architected from the ground up for stunning visual fidelity and seamless shopping."}
+                  {t.projects.moonlit?.description || "An elegant, high-end eCommerce platform crafted for bespoke home decor and interior design. Built with a focus on immersive aesthetics, smooth animations, and a seamless, luxurious shopping experience."}
                 </p>
                 <div className="flex items-center text-[#ec4899] text-sm font-semibold opacity-60 group-hover:opacity-100 transition-opacity transform translate-x-[-5px] group-hover:translate-x-0">
                   <a href="https://www.moonlitkeen.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
