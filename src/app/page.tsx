@@ -289,7 +289,7 @@ developer.buildExperience();`;
               </div>
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-r border-white/5 overflow-hidden">
                 {/* Background Image that fades in on hover */}
-                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/moonlit.png')" }}></div>
+                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/moonlit.jpg')" }}></div>
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #ec4899 0%, transparent 70%)' }}></div>
 
