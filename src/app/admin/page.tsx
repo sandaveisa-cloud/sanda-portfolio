@@ -14,7 +14,8 @@ type SocialPost = {
     platform: 'LinkedIn' | 'Facebook' | 'Instagram';
     content: {
         EN: string;
-        LV: string;
+        LV?: string;
+        DE?: string;
         RU: string;
         ES: string;
     };
@@ -38,7 +39,11 @@ export default function AdminBrain() {
     const [brand, setBrand] = useState<'sanda' | 'balearic'>('sanda');
     const [isGenerating, setIsGenerating] = useState(false);
     const [activeTab, setActiveTab] = useState<'LinkedIn' | 'Facebook' | 'Instagram'>('LinkedIn');
-    const [activeLang, setActiveLang] = useState<'EN' | 'LV' | 'RU' | 'ES'>('EN');
+    const [activeLang, setActiveLang] = useState<'EN' | 'LV' | 'RU' | 'ES' | 'DE'>('EN');
+
+    const availableLangs = brand === 'sanda'
+        ? ['EN', 'LV', 'RU', 'ES']
+        : ['EN', 'DE', 'RU', 'ES'];
 
     const [currentResult, setCurrentResult] = useState<CampaignResult | null>(null);
     const [history, setHistory] = useState<Campaign[]>([]);
@@ -162,14 +167,20 @@ export default function AdminBrain() {
                                 <div className="flex bg-black rounded-lg border border-white/10 p-1">
                                     <button
                                         type="button"
-                                        onClick={() => setBrand('sanda')}
+                                        onClick={() => {
+                                            setBrand('sanda');
+                                            if (activeLang === 'DE') setActiveLang('EN');
+                                        }}
                                         className={`flex-1 py-2 text-xs font-bold font-mono transition-all rounded ${brand === 'sanda' ? 'bg-[#00ffcc] text-black shadow-md' : 'text-gray-500 hover:text-white'}`}
                                     >
                                         SANDA VEISA
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => setBrand('balearic')}
+                                        onClick={() => {
+                                            setBrand('balearic');
+                                            if (activeLang === 'LV') setActiveLang('EN');
+                                        }}
                                         className={`flex-1 py-2 text-xs font-bold font-mono transition-all rounded ${brand === 'balearic' ? 'bg-[#3b82f6] text-white shadow-md' : 'text-gray-500 hover:text-white'}`}
                                     >
                                         BALEARIC YACHT
@@ -247,13 +258,13 @@ export default function AdminBrain() {
                             {/* Language SubTabs */}
                             <div className="flex bg-[#1a1a1a] border-b border-white/5 px-4 py-3 gap-2 overflow-x-auto">
                                 <div className="flex items-center gap-2 text-gray-500 text-xs font-mono mr-4"><Languages size={14} /> LOCALIZATION:</div>
-                                {['EN', 'LV', 'RU', 'ES'].map(lang => (
+                                {availableLangs.map(lang => (
                                     <button
                                         key={lang}
                                         onClick={() => setActiveLang(lang as any)}
                                         className={`px-3 py-1 text-xs font-mono rounded-md transition-all ${activeLang === lang ? 'bg-[#00ffcc]/10 text-[#00ffcc] border border-[#00ffcc]/30' : 'bg-black/50 text-gray-400 border border-white/5 hover:border-white/20'}`}
                                     >
-                                        {lang === 'EN' ? '🇬🇧 EN' : lang === 'LV' ? '🇱🇻 LV' : lang === 'RU' ? '🇷🇺 RU' : '🇪🇸 ES'}
+                                        {lang === 'EN' ? '🇬🇧 EN' : lang === 'LV' ? '🇱🇻 LV' : lang === 'DE' ? '🇩🇪 DE' : lang === 'RU' ? '🇷🇺 RU' : '🇪🇸 ES'}
                                     </button>
                                 ))}
                             </div>

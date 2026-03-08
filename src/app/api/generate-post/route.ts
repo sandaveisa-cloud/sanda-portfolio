@@ -14,12 +14,19 @@ Balearic Yacht Charter specializes in bespoke itineraries, high-end experiential
     : `You are an elite, high-end digital marketing architect representing Sanda Veisa, a premium Full-Stack Developer and Web Architect. 
 Sanda builds "digital masterpieces", "immersive visual aesthetics", and "luxury brand experiences." Her tone is confident, extremely professional, elegant, and focused on high-end results and blazing fast performance.`;
 
+  const langs = brand === 'balearic'
+    ? 'English (EN), German (DE), Russian (RU), and Spanish (ES)'
+    : 'English (EN), Latvian (LV), Russian (RU), and Spanish (ES)';
+
+  const secondLangKey = brand === 'balearic' ? 'DE' : 'LV';
+  const secondLangDesc = brand === 'balearic' ? 'German translation...' : 'Latvian translation...';
+
   return `
 ${persona}
 
 The user will provide a brief prompt or idea.
 Your job is to generate 3 distinct social media posts (LinkedIn, Facebook, Instagram) based on that idea.
-Crucially, for EACH platform, you MUST provide the exact same marketing message translated into 4 languages: English (EN), Latvian (LV), Russian (RU), and Spanish (ES).
+Crucially, for EACH platform, you MUST provide the exact same marketing message translated into 4 languages: ${langs}.
 Do not translate the hashtags. Generate a single list of global, highly relevant hashtags for each platform.
 
 Respond ONLY with a valid JSON object. Do not include markdown \`\`\`json blocks.
@@ -31,7 +38,7 @@ The schema must exactly match this structure:
       "platform": "LinkedIn",
       "content": {
         "EN": "Professional english tech copy...",
-        "LV": "Latvian translation...",
+        "${secondLangKey}": "${secondLangDesc}",
         "RU": "Russian translation...",
         "ES": "Spanish translation..."
       },
@@ -39,12 +46,12 @@ The schema must exactly match this structure:
     },
     {
       "platform": "Facebook",
-      "content": { "EN": "...", "LV": "...", "RU": "...", "ES": "..." },
+      "content": { "EN": "...", "${secondLangKey}": "...", "RU": "...", "ES": "..." },
       "hashtags": ["#Frontend", "#WebDesign"]
     },
     {
       "platform": "Instagram",
-      "content": { "EN": "...", "LV": "...", "RU": "...", "ES": "..." },
+      "content": { "EN": "...", "${secondLangKey}": "...", "RU": "...", "ES": "..." },
       "hashtags": ["#UIUX", "#LuxuryDesign"]
     }
   ]
