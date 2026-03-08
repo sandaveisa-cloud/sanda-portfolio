@@ -50,6 +50,8 @@ export default function AdminBrain() {
     const [authSecret, setAuthSecret] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
+    const [isPublishing, setIsPublishing] = useState(false);
+    const [publishResult, setPublishResult] = useState<{ success: boolean; message: string } | null>(null);
 
     // Simple hardcoded auth for the secret route
     const handleLogin = (e: React.FormEvent) => {
@@ -299,6 +301,42 @@ export default function AdminBrain() {
                                                                 >
                                                                     [ COPY TO CLIPBOARD ]
                                                                 </button>
+                                                            </div>
+
+                                                            {/* Publish to Facebook Button */}
+                                                            <div className="mt-4 flex flex-col gap-2">
+                                                                <button
+                                                                    onClick={async () => {
+                                                                        setIsPublishing(true);
+                                                                        setPublishResult(null);
+                                                                        try {
+                                                                            const res = await fetch('/api/publish-facebook', {
+                                                                                method: 'POST',
+                                                                                headers: { 'Content-Type': 'application/json' },
+                                                                                body: JSON.stringify({
+                                                                                    message: post.content[activeLang] + '\n\n' + post.hashtags.join(' '),
+                                                                                    imagePrompt: imagePrompt,
+                                                                                }),
+                                                                            });
+                                                                            const data = await res.json();
+                                                                            setPublishResult({ success: res.ok, message: data.message || data.error });
+                                                                        } catch (e: any) {
+                                                                            setPublishResult({ success: false, message: e.message });
+                                                                        } finally {
+                                                                            setIsPublishing(false);
+                                                                        }
+                                                                    }}
+                                                                    disabled={isPublishing}
+                                                                    className="w-full flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#1464d0] disabled:opacity-50 text-white font-bold py-3 px-4 rounded-xl transition-colors font-mono text-sm"
+                                                                >
+                                                                    {isPublishing ? <Loader2 className="animate-spin" size={16} /> : <span>📘</span>}
+                                                                    {isPublishing ? 'Publishing...' : 'Publish to Facebook'}
+                                                                </button>
+                                                                {publishResult && (
+                                                                    <div className={`text-xs font-mono px-3 py-2 rounded-lg ${publishResult.success ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+                                                                        {publishResult.success ? '✅' : '❌'} {publishResult.message}
+                                                                    </div>
+                                                                )}
                                                             </div>
 
                                                             <div className="flex-1 bg-black/60 rounded-xl border border-white/10 p-6 whitespace-pre-wrap font-sans text-gray-200 leading-relaxed overflow-y-auto">
