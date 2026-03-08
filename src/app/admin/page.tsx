@@ -320,26 +320,15 @@ export default function AdminBrain() {
                                                         <Sparkles size={14} className="text-[#00ffcc]" /> AI Generated Asset
                                                     </span>
                                                     <div className="relative aspect-square w-full rounded-xl overflow-hidden border border-white/10 bg-black/40 group flex items-center justify-center">
-                                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-500 gap-2">
-                                                            <Loader2 className="animate-spin" size={20} />
-                                                            <span className="text-[10px] uppercase tracking-widest">Rendering...</span>
-                                                        </div>
                                                         <img
-                                                            src={`https://image.pollinations.ai/prompt/${encodeURIComponent(String(imagePrompt) + " premium photorealistic luxury 8k")}?width=800&height=800&nologo=true`}
+                                                            src={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=800&height=800&nologo=true`}
                                                             alt="AI Generated Marketing Visual"
                                                             className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
                                                             loading="lazy"
-                                                            onError={(e) => {
-                                                                (e.target as HTMLImageElement).style.opacity = '0';
-                                                            }}
-                                                            onLoad={(e) => {
-                                                                (e.target as HTMLImageElement).style.opacity = '1';
-                                                            }}
-                                                            style={{ opacity: 0, transition: 'opacity 0.5s' }}
                                                         />
                                                         <div className="absolute z-20 inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                                                             <a
-                                                                href={`https://image.pollinations.ai/prompt/${encodeURIComponent(String(imagePrompt))}?width=1080&height=1080&nologo=true`}
+                                                                href={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=1080&height=1080&nologo=true`}
                                                                 target="_blank"
                                                                 rel="noreferrer"
                                                                 className="text-xs font-bold bg-[#00ffcc] text-black px-3 py-1.5 rounded hover:bg-white transition-colors"
@@ -357,7 +346,7 @@ export default function AdminBrain() {
                                     );
                                 })()}
                             </div>
-                        </motion.div >
+                        </motion.div>
                     ) : (
                         <div className="h-full min-h-[600px] border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center p-10 text-center">
                             <div className="w-20 h-20 rounded-full bg-[#111] flex items-center justify-center border border-white/5 mb-6 shadow-xl">
