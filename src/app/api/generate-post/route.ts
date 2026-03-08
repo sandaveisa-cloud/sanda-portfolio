@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { GoogleGenAI } from '@google/genai';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -74,8 +73,8 @@ export async function POST(req: Request) {
 
     const systemInstruction = getSystemPrompt(brand as 'sanda' | 'balearic');
 
-
     // Call Gemini API
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY as string });
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash', // Using 2.5 flash as standard high-quality model via @google/genai
       contents: prompt,

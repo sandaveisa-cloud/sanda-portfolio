@@ -321,14 +321,17 @@ export default function AdminBrain() {
                                                     </span>
                                                     <div className="relative aspect-square w-full rounded-xl overflow-hidden border border-white/10 bg-black/40 group flex items-center justify-center">
                                                         <img
-                                                            src={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=800&height=800&nologo=true`}
+                                                            src={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=800&height=800&nologo=true&enhance=false&seed=${Math.floor(Math.random() * 1000000)}`}
                                                             alt="AI Generated Marketing Visual"
                                                             className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
                                                             loading="lazy"
+                                                            onError={(e) => {
+                                                                console.error("Image failed to load via direct link, it might be blocked by browser shields.");
+                                                            }}
                                                         />
                                                         <div className="absolute z-20 inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                                                             <a
-                                                                href={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=1080&height=1080&nologo=true`}
+                                                                href={`https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt as string)}?width=1080&height=1080&nologo=true&enhance=false`}
                                                                 target="_blank"
                                                                 rel="noreferrer"
                                                                 className="text-xs font-bold bg-[#00ffcc] text-black px-3 py-1.5 rounded hover:bg-white transition-colors"
