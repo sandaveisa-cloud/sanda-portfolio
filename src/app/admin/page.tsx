@@ -49,6 +49,7 @@ export default function AdminBrain() {
     const [history, setHistory] = useState<Campaign[]>([]);
     const [authSecret, setAuthSecret] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     // Simple hardcoded auth for the secret route
     const handleLogin = (e: React.FormEvent) => {
@@ -77,6 +78,7 @@ export default function AdminBrain() {
 
         setIsGenerating(true);
         setCurrentResult(null);
+        setImageLoaded(false);
 
         try {
             const response = await fetch('/api/generate-post', {
@@ -320,25 +322,35 @@ export default function AdminBrain() {
                                                         <Sparkles size={14} className="text-[#00ffcc]" /> AI Generated Asset
                                                     </span>
                                                     <div className="relative aspect-square w-full rounded-xl overflow-hidden border border-white/10 bg-black/40 group flex items-center justify-center">
+                                                        {/* Loading spinner shown while Imagen generates */}
+                                                        {!imageLoaded && (
+                                                            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
+                                                                <Loader2 className="animate-spin text-[#00ffcc]" size={28} />
+                                                                <span className="text-xs text-gray-400 font-mono uppercase tracking-widest">AI Rendering...</span>
+                                                                <span className="text-[10px] text-gray-600 font-mono">~20-30 sec</span>
+                                                            </div>
+                                                        )}
                                                         <img
+                                                            key={imagePrompt as string}
                                                             src={`/api/generate-image?prompt=${encodeURIComponent(imagePrompt as string)}`}
                                                             alt="AI Generated Marketing Visual"
-                                                            className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
-                                                            loading="lazy"
-                                                            onError={(e) => {
-                                                                console.error("Image failed to load via direct link, it might be blocked by browser shields.");
-                                                            }}
+                                                            className="w-full h-full object-cover relative z-10 transition-all duration-700 group-hover:scale-105"
+                                                            style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 0.7s ease' }}
+                                                            onLoad={() => setImageLoaded(true)}
+                                                            onError={() => setImageLoaded(false)}
                                                         />
-                                                        <div className="absolute z-20 inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                                            <a
-                                                                href={`/api/generate-image?prompt=${encodeURIComponent(imagePrompt as string)}`}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                                className="text-xs font-bold bg-[#00ffcc] text-black px-3 py-1.5 rounded hover:bg-white transition-colors"
-                                                            >
-                                                                Download HD
-                                                            </a>
-                                                        </div>
+                                                        {imageLoaded && (
+                                                            <div className="absolute z-20 inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                                                <a
+                                                                    href={`/api/generate-image?prompt=${encodeURIComponent(imagePrompt as string)}`}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                    className="text-xs font-bold bg-[#00ffcc] text-black px-3 py-1.5 rounded hover:bg-white transition-colors"
+                                                                >
+                                                                    Download HD
+                                                                </a>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                     <p className="text-[10px] text-gray-600 font-mono leading-tight">
                                                         Prompt: {String(imagePrompt).length > 80 ? String(imagePrompt).substring(0, 80) + '...' : imagePrompt}
