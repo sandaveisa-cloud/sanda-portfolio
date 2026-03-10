@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, Linkedin, Calculator, Send, Facebook, Search, Zap, Shield } from 'lucide-react';
+import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, Linkedin, Calculator, Send, Facebook, Search, Zap, Shield, Download } from 'lucide-react';
 import { dictionaries, Language } from '../dictionaries';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [typedCode, setTypedCode] = useState("");
@@ -192,12 +193,15 @@ developer.buildExperience();`;
             {t.hero.description}
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <a href="#projects" className="px-7 py-3.5 rounded bg-[#00ffcc] text-black font-semibold hover:bg-white hover:shadow-[0_0_20px_rgba(0,255,204,0.4)] transition-all flex items-center gap-2">
               {t.hero.exploreBtn} <ChevronRight size={18} />
             </a>
             <a href="mailto:sanda.veisa@gmail.com" className="px-7 py-3.5 rounded bg-transparent border border-white/20 hover:bg-white/5 transition-all font-medium flex items-center gap-2 text-white">
               <Mail size={18} /> {t.hero.talkBtn}
+            </a>
+            <a href="/CV_Sanda_Veisa_2026.pdf" target="_blank" rel="noopener noreferrer" className="px-7 py-3.5 rounded bg-[#111111] border border-[#00ffcc]/30 hover:bg-[#00ffcc]/10 hover:border-[#00ffcc] transition-all font-medium flex items-center gap-2 text-[#00ffcc] shadow-[0_0_15px_rgba(0,255,204,0.1)]">
+              <Download size={18} /> {lang === 'en' ? 'Download CV' : (lang === 'es' ? 'Descargar CV' : 'Скачать CV')}
             </a>
           </div>
         </motion.div>
@@ -288,8 +292,8 @@ developer.buildExperience();`;
                 </div>
               </div>
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-r border-white/5 overflow-hidden">
-                {/* Background Image that fades in on hover */}
-                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/moonlit.jpg')" }}></div>
+                {/* Background Image optimized with next/image */}
+                <Image src="/projects/moonlit.jpg" alt="Moonlit Keen" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #ec4899 0%, transparent 70%)' }}></div>
 
@@ -333,8 +337,8 @@ developer.buildExperience();`;
 
               {/* Abstract Visuals / Image for Project */}
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-l border-white/5 overflow-hidden">
-                {/* Background Image that fades in on hover */}
-                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/balearic.png')" }}></div>
+                {/* Background Image optimized with next/image */}
+                <Image src="/projects/balearic.png" alt="Balearic Yacht Charter" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #3b82f6 0%, transparent 70%)' }}></div>
 
@@ -383,8 +387,8 @@ developer.buildExperience();`;
               </div>
 
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center border-r border-white/5 relative overflow-hidden">
-                {/* Background Image that fades in on hover */}
-                <div className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" style={{ backgroundImage: "url('/projects/gardais.png')" }}></div>
+                {/* Background Image optimized with next/image */}
+                <Image src="/projects/gardais.png" alt="Gardais Kumoss" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-10 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at left center, #C59D5F 0%, transparent 70%)' }}></div>
 
