@@ -293,7 +293,7 @@ developer.buildExperience();`;
               </div>
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-r border-white/5 overflow-hidden">
                 {/* Background Image optimized with next/image */}
-                <Image src="/projects/moonlit.jpg" alt="Moonlit Keen" fill unoptimized className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
+                <Image src="/projects/moonlit.jpg" alt="Moonlit Keen" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #ec4899 0%, transparent 70%)' }}></div>
 
@@ -338,7 +338,7 @@ developer.buildExperience();`;
               {/* Abstract Visuals / Image for Project */}
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center relative border-l border-white/5 overflow-hidden">
                 {/* Background Image optimized with next/image */}
-                <Image src="/projects/balearic.png" alt="Balearic Yacht Charter" fill unoptimized className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
+                <Image src="/projects/balearic.png" alt="Balearic Yacht Charter" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-20 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at right center, #3b82f6 0%, transparent 70%)' }}></div>
 
@@ -388,7 +388,7 @@ developer.buildExperience();`;
 
               <div className="w-full md:w-[40%] bg-black/50 p-6 flex flex-col justify-center border-r border-white/5 relative overflow-hidden">
                 {/* Background Image optimized with next/image */}
-                <Image src="/projects/gardais.png" alt="Gardais Kumoss" fill unoptimized className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
+                <Image src="/projects/gardais.png" alt="Gardais Kumoss" fill className="absolute inset-0 z-0 object-cover object-center transition-all duration-700 opacity-20 filter grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/70 group-hover:bg-black/20 transition-all duration-700 z-0"></div>
                 <div className="absolute inset-0 opacity-10 pointer-events-none z-10" style={{ background: 'radial-gradient(circle at left center, #C59D5F 0%, transparent 70%)' }}></div>
 
