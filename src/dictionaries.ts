@@ -82,6 +82,23 @@ export const dictionaries = {
             badge: "ENTERPRISE SCALABILITY",
             title: "Architecting for High-Scale Operations",
             description: "While I move with the agility of a private consultant, my architectural foundations are built for enterprise scale. I am fully equipped to lead, program, and deploy complex, high-traffic frameworks for large-scale businesses and established tech agencies."
+        },
+        testimonials: {
+            title: "Client Feedback",
+            subtitle: "SYSTEM_ENDORSEMENTS",
+            badge: "VERIFIED ARCHITECTURE",
+            empty: "No reviews found."
+        },
+        leaveReview: {
+            title: "Leave a Review",
+            description: "Your feedback helps me improve the Sanda.Veisa system architecture and deliver better results for future deployments.",
+            name: "Your Name",
+            role: "Role / Company",
+            rating: "System Rating (Out of 5)",
+            content: "Your Experience",
+            submit: "Submit Experience",
+            success: "Review submitted directly to the database. It will be live upon verification. Thank you!",
+            error: "Failed to submit. Check your connection or try again."
         }
     },
     es: {
@@ -167,6 +184,23 @@ export const dictionaries = {
             badge: "ESCALABILIDAD EMPRESARIAL",
             title: "Arquitectura para operaciones de gran escala",
             description: "Aunque me muevo con la agilidad de un consultor privado, mis bases arquitectónicas están diseñadas para escala empresarial. Estoy totalmente equipada para liderar, programar y desplegar marcos complejos de alto tráfico para corporaciones y grandes agencias."
+        },
+        testimonials: {
+            title: "Comentarios de Clientes",
+            subtitle: "RESPALDOS_DEL_SISTEMA",
+            badge: "ARQUITECTURA VERIFICADA",
+            empty: "No se encontraron reseñas."
+        },
+        leaveReview: {
+            title: "Dejar una Reseña",
+            description: "Sus comentarios me ayudan a mejorar la arquitectura del sistema Sanda.Veisa y ofrecer mejores resultados para futuros despliegues.",
+            name: "Su Nombre",
+            role: "Cargo / Empresa",
+            rating: "Calificación del Sistema (Sobre 5)",
+            content: "Su Experiencia",
+            submit: "Enviar Reseña",
+            success: "Reseña enviada directamente a la base de datos. Estará en vivo tras la verificación. ¡Gracias!",
+            error: "Error al enviar. Comprueba tu conexión o inténtalo de nuevo."
         }
     },
     ru: {
@@ -252,6 +286,23 @@ export const dictionaries = {
             badge: "МАСШТАБИРУЕМОСТЬ ДЛЯ БИЗНЕСА",
             title: "Архитектура для крупных корпораций",
             description: "Хотя я работаю с ловкостью частного консультанта, мои решения рассчитаны на корпоративные масштабы. Я полностью готова возглавить разработку и внедрение сложных высоконагруженных систем для крупного бизнеса и серьезных агентств."
+        },
+        testimonials: {
+            title: "Отзывы Клиентов",
+            subtitle: "ОДОБРЕНИЕ_СИСТЕМЫ",
+            badge: "ПРОВЕРЕННАЯ АРХИТЕКТУРА",
+            empty: "Отзывы не найдены."
+        },
+        leaveReview: {
+            title: "Оставить отзыв",
+            description: "Ваши отзывы помогают мне улучшать системную архитектуру Sanda.Veisa и достигать лучших результатов в будущих внедрениях.",
+            name: "Ваше Имя",
+            role: "Должность / Компания",
+            rating: "Оценка Системы (из 5)",
+            content: "Ваш Опыт",
+            submit: "Отправить Отзыв",
+            success: "Отзыв отправлен прямо в базу данных. Он будет опубликован после проверки. Спасибо!",
+            error: "Не удалось отправить. Проверьте подключение или повторите попытку."
         }
     }
 };

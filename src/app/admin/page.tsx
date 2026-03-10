@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Send, Database, Loader2, Sparkles, CheckCircle2, Languages } from 'lucide-react';
+import { Terminal, Send, Database, Loader2, Sparkles, CheckCircle2, Languages, Star } from 'lucide-react';
 import Link from 'next/link';
+import TestimonialAdmin from '../../components/TestimonialAdmin';
 
 // Supabase Setup
 import { createClient } from '@supabase/supabase-js';
@@ -412,6 +413,14 @@ export default function AdminBrain() {
                     }
                 </div >
             </div >
+
+            {/* Testimonial Admin Section */}
+            <div className="mt-10 bg-[#111111] border border-white/5 p-6 rounded-2xl shadow-xl">
+                <h2 className="text-lg font-bold mb-6 flex items-center gap-2">
+                    <Star size={18} className="text-[#00ffcc]" /> Portfolio Testimonials Matrix
+                </h2>
+                <TestimonialAdmin />
+            </div>
         </div >
     );
 }

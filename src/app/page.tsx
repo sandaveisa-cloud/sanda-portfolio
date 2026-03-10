@@ -5,6 +5,7 @@ import { Terminal, Code2, Globe, Server, Database, ChevronRight, Mail, Github, L
 import { dictionaries, Language } from '../dictionaries';
 import Link from 'next/link';
 import Image from 'next/image';
+import TestimonialMarquee from '../components/TestimonialMarquee';
 
 export default function Portfolio() {
   const [typedCode, setTypedCode] = useState("");
@@ -583,6 +584,9 @@ developer.buildExperience();`;
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonial Marquee */}
+      <TestimonialMarquee t={t} />
 
       {/* NEW: Project Estimator Section */}
       <section id="estimate" className="py-24 px-6 relative bg-[#0a0a0a] border-y border-white/5">
